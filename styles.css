@@ -1,0 +1,209 @@
+/* Box sizing & margin rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* !! ADD TABINDEX to '#' HREFs !! | Solves cmd + F slow scrolling */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-size: 14px;
+  min-height: 100vh;
+  /* text-rendering: optimizeSpeed; */
+  line-height: 1.5;
+  --primary1: hsl(158, 36%, 37%);
+  --primary2: hsl(30, 38%, 92%);
+  --secondary1: hsl(212, 21%, 14%);
+  --secondary2: hsl(228, 12%, 48%);
+  --secondary3: hsl(0, 0%, 100%);
+}
+
+/* Remove list styles on ul, ol element */
+ul,
+ol {
+  list-style: none;
+}
+
+/* remove underline from 'a' elements */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------------ */
+
+body {
+  background-color: var(--primary2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  filter: blur(0.2px);
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 90%;
+  background-color: var(--secondary3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.serif {
+  font-family: "Fraunces", serif;
+}
+
+.sans-serif {
+  font-family: "Montserrat", sans-serif;
+}
+
+.gray {
+  color: var(--secondary2);
+}
+
+.green {
+  color: var(--primary1);
+}
+
+.green-background {
+  background-color: var(--primary1);
+}
+
+.image-desktop {
+  display: none;
+  object-fit: cover;
+  height: 100%;
+  width: 50%;
+}
+
+.image-mobile {
+  height: 37vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: 30% 0;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 23px;
+}
+
+.product-type {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 12px;
+}
+
+.product {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin: 12px 0 14px 0;
+}
+
+.description {
+  line-height: 1.2rem;
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.current-price {
+  font-size: 2rem;
+}
+
+.former-price {
+  padding: 0 0 0 1.5rem;
+  text-decoration: line-through;
+}
+
+.btn {
+    color: #fff;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn:focus {
+    outline: none;
+    background-color: hsl(158, 37%, 26%);
+}
+
+.cart-img {
+    filter: invert(100%);
+  width: 1rem;
+  height: 1rem;
+  margin: 0 6px 0 0;
+}
+
+footer {
+  font-size: 0.45rem;
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+  right: 0;
+}
+
+@media (min-width: 1200px) {
+    main {
+      flex-direction: row;
+      max-width: 40vw;
+      max-height: 50vh;
+    }
+    .image-desktop {
+      display: block;
+    }
+    .image-mobile {
+      display: none;
+    }
+  }
